@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.kursinisdarbas.helpers.Rest;
 import com.google.gson.Gson;
@@ -53,14 +54,26 @@ public class MainActivity extends AppCompatActivity {
         executor.execute(()->{
             try {
                 String response = Rest.sendPost(VALIDATE_USER,info);
+                System.out.println("response:"+response);
                 handler.post(()->{
                     try {
                         System.out.println(response);
-                        if(!response.equals("Error")){
+                        if(!response.equals("")){
                             startActivity(intent);
+                        }else{
+                            CharSequence text = "Neteisingi prisijungimo duomenys!";
+                            int duration = Toast.LENGTH_SHORT;
+
+                            Toast toast = Toast.makeText(this, text, duration);
+                            toast.show();
                         }
                     }catch (Exception e){
                         e.printStackTrace();
+                        CharSequence text = "Kažkas ne taip :/";
+                        int duration = Toast.LENGTH_SHORT;
+
+                        Toast toast = Toast.makeText(this, text, duration);
+                        toast.show();
                     }
                 });
             } catch (IOException e) {
