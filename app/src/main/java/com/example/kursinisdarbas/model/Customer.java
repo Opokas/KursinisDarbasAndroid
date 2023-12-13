@@ -10,8 +10,8 @@ public class Customer extends User {
     private String address;
     private String cardNo;
 
-    public Customer(String login, String password, LocalDate birthDate, String name, String surname, String address, String cardNo) {
-        super(login, password, birthDate, name, surname);
+    public Customer(String login, String password, String name, String surname, String address, String cardNo) {
+        super(login, password, name, surname);
         this.address = address;
         this.cardNo = cardNo;
     }

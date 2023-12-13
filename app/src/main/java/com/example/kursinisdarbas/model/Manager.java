@@ -14,8 +14,8 @@ public class Manager extends User {
     private boolean isAdmin;
 
 
-    public Manager(String login, String password, LocalDate birthDate, String name, String surname, String employeeId, LocalDate employmentDate, boolean isAdmin) {
-        super(login, password, birthDate, name, surname);
+    public Manager(String login, String password, String name, String surname, String employeeId, LocalDate employmentDate, boolean isAdmin) {
+        super(login, password, name, surname);
         this.employeeId = employeeId;
         this.employmentDate = employmentDate;
         this.isAdmin = isAdmin;

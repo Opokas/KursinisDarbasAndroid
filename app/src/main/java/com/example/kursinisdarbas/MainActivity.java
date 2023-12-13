@@ -13,6 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.kursinisdarbas.helpers.Rest;
+import com.example.kursinisdarbas.model.Customer;
+import com.example.kursinisdarbas.model.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
@@ -59,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
                     try {
                         System.out.println(response);
                         if(!response.equals("")){
+
+//                            Gson userGson = new Gson ();
+//                            User connectedUser = userGson.fromJson (response, User.class);
+                            intent.putExtra("UserResponse",response);
+
                             startActivity(intent);
                         }else{
                             CharSequence text = "Neteisingi prisijungimo duomenys!";

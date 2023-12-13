@@ -3,4 +3,8 @@
     <string name="login_field">Enter login</string>
     <string name="password_field">Enter password</string>
     <string name="login_btn_field">Login</string>
+    <string name="Say_hello">Hello, </string>
+    <string name="btn0">Update name</string>
+    <string name="btn1">Delete </string>
+    <string name="newName">Enter new name</string>
 </resources>
